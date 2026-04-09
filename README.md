@@ -1,3 +1,4 @@
+![readme_pic_1](https://github.com/user-attachments/assets/fbc97c2d-77d0-4f13-a408-e403a59d541f)
 # Databricks Genie Code Skills Repository
 
 A comprehensive collection of **22 production-ready skills** for **Genie Code**, designed to empower data professionals working on the Databricks platform. This repository teaches Genie Code domain-specific expertise in data engineering, analytics, ML operations, platform optimization, and governance.
