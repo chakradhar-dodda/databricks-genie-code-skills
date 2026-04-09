@@ -7,6 +7,24 @@ A comprehensive collection of **22 production-ready skills** for **Genie Code**,
 
 ---
 
+## 📑 Table of Contents
+
+* [📚 Overview](#-overview)
+* [🗂️ Repository Structure](#️-repository-structure)
+* [🚀 Quick Start](#-quick-start)
+* [💡 Using Skills with Genie Code](#-using-skills-with-genie-code)
+* [✍️ Creating Custom Skills](#️-creating-custom-skills)
+* [🤝 Contributing](#-contributing)
+* [⭐ Show Your Support](#-show-your-support)
+* [💬 Support & Feedback](#-support--feedback)
+* [🌐 Connect & Collaborate](#-connect--collaborate)
+* [📚 Additional Resources](#-additional-resources)
+* [🎓 Learning Paths](#-learning-paths)
+* [📄 License](#-license)
+* [🙏 Acknowledgments](#-acknowledgments)
+
+---
+
 ## 📚 Overview
 
 This repository enhances Genie Code's capabilities through four powerful configuration layers:
@@ -31,6 +49,7 @@ Enterprise-level domain expertise available to all users in the workspace.
 databricks-genie-code-skills/
 ├── README.md                                   # This file
 ├── SKILLS_INVENTORY.md                         # Detailed skill catalog
+├── .assistant_instructions.md                  # Pre-configured assistant instructions template
 ├── examples/
 │   ├── user-instructions.md                    # Template for personal config
 │   └── workspace-instructions.md               # Example workspace config
@@ -76,6 +95,10 @@ databricks-genie-code-skills/
 # 3. Copy skills to Genie Code's skills folder
 
 cp -r /Workspace/Users/your.email@company.com/databricks-genie-code-skills/skills/* ~/.assistant/skills/
+
+# 4. (Recommended) Copy the pre-configured assistant instructions
+#    This includes all 22 skill references for automatic skill loading
+cp /Workspace/Users/your.email@company.com/databricks-genie-code-skills/.assistant_instructions.md ~/.assistant_instructions.md
 ```
 
 **Option 2: Git Clone**
@@ -85,6 +108,9 @@ git clone <repository-url> /Workspace/Users/your.email@company.com/databricks-ge
 
 # Link skills to Genie Code
 ln -s /Workspace/Users/your.email@company.com/databricks-genie-code-skills/skills/* ~/.assistant/skills/
+
+# Copy assistant instructions to your home directory
+cp /Workspace/Users/your.email@company.com/databricks-genie-code-skills/.assistant_instructions.md ~/.assistant_instructions.md
 ```
 
 **Option 3: Selective Skills**
@@ -92,6 +118,9 @@ ln -s /Workspace/Users/your.email@company.com/databricks-genie-code-skills/skill
 # Copy only specific skills you need
 cp -r /Workspace/Users/your.email@company.com/databricks-genie-code-skills/skills/delta-lake-optimization ~/.assistant/skills/
 cp -r /Workspace/Users/your.email@company.com/databricks-genie-code-skills/skills/spark-optimization ~/.assistant/skills/
+
+# Still recommended to copy assistant instructions
+cp /Workspace/Users/your.email@company.com/databricks-genie-code-skills/.assistant_instructions.md ~/.assistant_instructions.md
 ```
 
 ### Verify Installation
@@ -101,11 +130,14 @@ ls -la ~/.assistant/skills/
 
 # Each skill should have a SKILL.md file
 cat ~/.assistant/skills/delta-lake-optimization/SKILL.md
+
+# Verify assistant instructions
+cat ~/.assistant_instructions.md
 ```
 
 ### (Optional) Customize User Instructions
 ```bash
-# Copy template and customize for your needs
+# If you prefer to start from the examples template instead
 cp /Workspace/Users/your.email@company.com/databricks-genie-code-skills/examples/user-instructions.md ~/.assistant_instructions.md
 
 # Edit with your preferences
@@ -150,80 +182,6 @@ Genie Code automatically selects relevant skills based on:
 → Uses: streaming-pipelines, auto-loader, data-quality-checks, 
         error-handling, monitoring-observability
 ```
-
----
-
-## 📖 Key Skills Included (22 Skills, 14,841 Lines)
-
-### 🔧 Data Engineering (5 skills | 3,063 lines)
-**High-volume data processing, ingestion, and pipeline patterns**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Delta Lake Optimization** | 681 | OPTIMIZE, VACUUM, Z-ORDER, Liquid Clustering, Predictive I/O |
-| **Auto Loader** | 593 | Schema inference, Unity Catalog Volumes, serverless ingestion |
-| **Streaming Pipelines** | 644 | Structured Streaming, Delta Live Tables, exactly-once semantics |
-| **Incremental Processing** | 593 | Change Data Feed, merge patterns, watermarking |
-| **Data Quality Checks** | 552 | Expectations, Lakehouse Monitoring, Great Expectations integration |
-
-### 🏛️ Governance & Architecture (3 skills | 1,669 lines)
-**Security, compliance, and architectural patterns**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Unity Catalog Governance** | 348 | Access control, lineage, data discovery, audit logging |
-| **Data Contracts** | 824 | Schema enforcement, validation, evolution patterns |
-| **Medallion Architecture** | 497 | Bronze/Silver/Gold layers, multi-hop pipelines |
-
-### ⚡ Performance & Optimization (3 skills | 2,604 lines)
-**Cost reduction and query acceleration techniques**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Spark Optimization** | 960 | Partitioning, caching, broadcast joins, Photon engine |
-| **Cost Optimization** | 825 | Cluster sizing, spot instances, serverless economics |
-| **Performance Tuning** | 819 | Query plans, bottleneck analysis, memory tuning |
-
-### 📊 Analytics & Data Modeling (2 skills | 1,315 lines)
-**SQL patterns and dimensional modeling**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **SQL Best Practices** | 826 | Query optimization, CTEs, window functions, anti-patterns |
-| **Data Modeling** | 489 | Star schema, SCD Type 2, normalization techniques |
-
-### 🤖 ML Operations (3 skills | 2,282 lines)
-**End-to-end machine learning lifecycle**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Feature Engineering** | 822 | Feature Store, real-time serving, transformations |
-| **Model Deployment** | 758 | Batch inference, REST APIs, serverless endpoints |
-| **MLflow Tracking** | 702 | Experiment tracking, model registry, versioning |
-
-### 🔄 Orchestration & Workflow (3 skills | 2,058 lines)
-**Job scheduling and dependency management**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Workflow Orchestration** | 750 | Multi-task jobs, dependencies, conditional execution |
-| **Job Scheduling** | 631 | Cron triggers, event-driven patterns, SLA management |
-| **Error Handling** | 677 | Retry strategies, alerting, failure recovery |
-
-### 🔍 Quality & Monitoring (2 skills | 957 lines)
-**Observability and testing patterns**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Monitoring & Observability** | 427 | Metrics collection, alerting, system.access.audit |
-| **Testing Strategies** | 530 | Unit tests, integration tests, data validation |
-
-### 📚 Best Practices (1 skill | 893 lines)
-**Standards and documentation patterns**
-
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **Documentation Practices** | 893 | Code documentation, notebook standards, knowledge sharing |
 
 ---
 
